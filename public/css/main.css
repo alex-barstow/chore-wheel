@@ -1,0 +1,37 @@
+.main {
+  width: 75%;
+  margin: auto;
+  text-align: center;
+}
+.lists {
+  display: inline-block;
+  width: 40%;
+}
+li {
+  list-style-type: none;
+}
+.form {
+  width: 25%;
+  margin: 50px auto;
+}
+h1 {
+  margin-left: 15px;
+  color: white;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+.title {
+  width: 100%;
+  background-color: #61ADA0;
+  margin-bottom: 80px;
+  padding: 7px;
+}
+.sub-title {
+  font-size: 25px;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+.category {
+  margin-bottom: 20px;
+}
+.cycle {
+  text-align: center;
+}
