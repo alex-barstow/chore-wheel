@@ -40,27 +40,27 @@ end
 
 post '/index/cycle' do
   @chores = Chore.all.order(id: :asc)
+  user_ids = @chores.map{ |chore| chore.user.id}
   response = ""
-  user_ids = []
 
-  @chores.each do |chore|
-    user_ids << chore.user.id
-  end
-
-  ############### FIX THIS ################
+  # Cycle user/chore associations
   @chores.each_with_index do |chore, index|
     if chore.user.id == user_ids[-1]
       chore.update_attribute(:user_id, user_ids[0])
 
       response += "<li><span class='lists callout'>#{chore.user.name}</span> <span class='lists callout'>#{chore.name}</span></li>"
+      puts 'END'
     else
       chore.update_attribute(:user_id, user_ids[index + 1]) # this needs to be next User not Chore
 
       response += "<li><span class='lists callout'>#{chore.user.name}</span> <span class='lists callout'>#{chore.name}</span></li>"
+      puts 'GO'
     end
   end
 
   response
 end
+
+#
 
 # remove if/end logic from span in index

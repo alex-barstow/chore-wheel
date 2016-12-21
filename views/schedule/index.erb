@@ -5,7 +5,7 @@
 <div class="main">
 
   <div class="wheel">
-    <ul id="main-list">
+    <ul>
       <div class="category">
         <span class="lists">
           <h2 class="sub-title">Housemates</h2>
@@ -14,16 +14,19 @@
           <h2 class="sub-title">Chores</h2>
         </span>
       </div>
-      <% unless @users.empty? || @users.nil? %>
-        <% @users.each do |user| %>
-          <li>
-            <span class="lists callout"><%= user.name %></span>
-            <% if user.chores.first %>
-              <span class="lists callout"><%= user.chores.first.name %></span>
-            <% end %>
-          </li>
+      <div id="main-list">
+        <% unless @users.empty? || @users.nil? %>
+          <% @users.each do |user| %>
+            <li>
+              <span class="lists callout"><%= user.name %></span>
+              <% if user.chores.first %>
+                <span class="lists callout"><%= user.chores.first.name %></span>
+              <% end %>
+            </li>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
+
     </ul>
   </div>
 
